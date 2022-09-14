@@ -68,7 +68,7 @@ const gameOver = () => {
   // so total time taken is current time - start time
   const finishTime = new Date().getTime();
   const timeTaken = (finishTime - startTime) / 1000;
-
+const updateTimeTaken =parseInt(timeTaken)
   // show result modal
   resultModal.innerHTML = "";
   resultModal.classList.toggle("hidden");
@@ -80,7 +80,7 @@ const gameOver = () => {
   // show result
   resultModal.innerHTML += `
     <h1>Finished!</h1>
-    <p>You took: <span class="bold">${timeTaken}</span> seconds</p>
+    <p>You took: <span class="bold">${updateTimeTaken}</span> seconds</p>
     <p>You made <span class="bold red">${errorCount}</span> mistakes</p>
     <button onclick="closeModal()">Close</button>
   `;
@@ -134,7 +134,7 @@ displayHistory();
 setInterval(() => {
   const currentTime = new Date().getTime();
   const timeSpent = (currentTime - startTime) / 1000;
-const newTimeSpent = parseInt(timeSpent)
+const updateTimeSpent = parseInt(timeSpent)
 
-  document.getElementById("show-time").innerHTML = `${startTime ? newTimeSpent : 0} seconds`;
+  document.getElementById("show-time").innerHTML = `${startTime ? updateTimeSpent : 0} seconds`;
 }, 1000);
