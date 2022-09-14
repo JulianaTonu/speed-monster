@@ -85,7 +85,7 @@ const updateTimeTaken =parseInt(timeTaken)
     <button onclick="closeModal()">Close</button>
   `;
 
-  addHistory(questionText, timeTaken, errorCount);
+  addHistory(questionText, updateTimeTaken, errorCount);
 
   // restart everything
   // startTime = 0;
