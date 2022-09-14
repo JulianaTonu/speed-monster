@@ -89,7 +89,6 @@ const updateTimeTaken =parseInt(timeTaken)
   addHistory(questionText, updateTimeTaken, errorCount);
 
   // restart everything
-  // startTime = 0;
   startTime = null;
   errorCount = 0;
   userText = "";
