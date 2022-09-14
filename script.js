@@ -102,7 +102,7 @@ const closeModal = () => {
 
 const start = () => {
   // If already started, do not start again
-  if (startTime);
+  if (startTime)return;
 
   let count = 3;
   countdownOverlay.style.display = "flex";
@@ -121,7 +121,7 @@ const start = () => {
     }
     count--;
   }, 1000);
-  return;
+  
 };
 
 // START Countdown
@@ -134,7 +134,7 @@ displayHistory();
 setInterval(() => {
   const currentTime = new Date().getTime();
   const timeSpent = (currentTime - startTime) / 1000;
+const newTimeSpent = parseInt(timeSpent)
 
-
-  document.getElementById("show-time").innerHTML = `${startTime ? timeSpent : 0} seconds`;
+  document.getElementById("show-time").innerHTML = `${startTime ? newTimeSpent : 0} seconds`;
 }, 1000);
