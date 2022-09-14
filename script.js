@@ -88,11 +88,11 @@ const gameOver = () => {
   addHistory(questionText, timeTaken, errorCount);
 
   // restart everything
-  startTime = 0;
-  // startTime = null;
+  // startTime = 0;
+  startTime = null;
   errorCount = 0;
   userText = "";
-  display.classList.add("inactive");
+  display.classList.add("inactive"); 
 };
 
 const closeModal = () => {
@@ -102,7 +102,7 @@ const closeModal = () => {
 
 const start = () => {
   // If already started, do not start again
-  if (startTime)return ;
+  if (startTime);
 
   let count = 3;
   countdownOverlay.style.display = "flex";
@@ -111,17 +111,17 @@ const start = () => {
     countdownOverlay.innerHTML = `<h1>${count}</h1>`;
 
     // finished timer
-    if (count == 0) {
+    if (count === 0) {
       // -------------- START TYPING -----------------
       document.addEventListener("keydown", typeController);
-      countdownOverlay.style.display = "flex";
+      countdownOverlay.style.display = "none";
       display.classList.remove("inactive");
-
       clearInterval(startCountdown);
       startTime = new Date().getTime();
     }
     count--;
   }, 1000);
+  return;
 };
 
 // START Countdown
